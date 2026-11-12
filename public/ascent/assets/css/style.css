@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: Nunito;
+        color: var(--muted-foreground);
+        line-height: 160%;
+        background-color: var(--background);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: Jost;
+    }
+
+    p {
+        color: var(--foreground);
+
+    }
+
+    :root {
+        --background: #fff;
+        --foreground: #686868;
+
+        --primary: #F7941E;
+        --primary-foreground: #F7941E;
+
+        --secondary: #1CBBB4;
+        --secondary-foreground: #1CBBB4;
+
+        --destructive: #ED145B;
+        --destructive-foreground: #ED145B;
+
+        --green: #73BE48;
+        --green-foreground: #73BE48;
+
+        --warm: #FFF0E5;
+
+        --cream-foreground:#fff;
+
+        --muted:#000;
+        --muted-foreground:#000;
+    }
+}
+
+@layer utilities {
+    [data-open="true"] .accordion-details {
+        opacity: 1;
+        visibility: visible;
+        max-height: 160px;
+    }
+
+    [data-open="true"] .icon {
+        background-color: var(--secondary);
+    }
+    .icon .fa-minus{
+        display: none;
+    }
+    [data-open="true"] .icon .fa-minus {
+        display: block;
+    }
+    [data-open="true"] .icon .fa-plus {
+        display: none;
+    }
+
+    .portfolio .active-tab{
+        background-color: var(--primary);
+        color: var(--cream-foreground);
+    }
+
+    .education .active-tab{
+        background-color: var(--destructive);
+        color: var(--cream-foreground);
+    }
+
+    .stroke-primary {
+        -webkit-text-fill-color: var(--cream-foreground);
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #686868;
+    }
+
+}
+
+@layer components {
+
+    /* ------- btn style with hover start ------- */
+    .btn {
+        position: relative;
+        z-index: 10;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.5s ease-in-out;
+        padding: 20px 30px;
+        border-radius: 6px;
+        overflow: hidden;
+        max-height: 60px;
+    }
+
+    .btn::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: var(--secondary);
+        width: 0%;
+        height: 100%;
+        z-index: -1;
+        transition: all 0.5s ease-in-out;
+        border-radius: 6px;
+    }
+
+    .btn:hover::after {
+        width: 100%;
+    }
+
+    .btn:hover {
+        color: var(--cream-foreground);
+    }
+
+    .btn-rounded-full{
+        max-height: 60px;
+        z-index: 10;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.5s ease-in-out;
+        padding: 20px 30px;
+        border-radius: 45px;
+        background-color: var(--primary);
+        color: var(--cream-foreground);
+        line-height: normal;
+        border: 2px solid transparent;
+    }
+    .btn-rounded-full:hover{
+        background-color: transparent;
+        color: var(--primary-foreground);
+        border: 2px solid var(--primary);
+    }
+
+    @media(max-width:1024px){
+        .btn, .btn-rounded-full{
+            padding: 10px 30px;
+        }
+    }
+
+    /* ------- btn style with hover end ------- */
+
+    /* ------- card hover image slide up start -------- */
+    .image-layer-hover{
+        background-size: cover;
+        width: 25%;
+        height: 100%;
+        transition: 0.5s;
+    }
+    .image-layer-hover:nth-child(1){
+        background-position: 0;
+        transition-delay: 0;
+    }
+    .image-layer-hover:nth-child(2){
+        background-position: 33.33%;
+        transition-delay: 0.1s;
+    }
+    .image-layer-hover:nth-child(3){
+        background-position: 66.66%;
+        transition-delay: 0.2s;
+    }
+    .image-layer-hover:nth-child(4){
+        background-position: 100%;
+        transition-delay: 0.3s;
+    }
+
+    .layer-card:hover .image-layer-hover{
+        transform: translateY(-100%);
+    }
+    /* ------- card hover image slide up end -------- */
+}
+
+/* service swiper pagination */
+.services .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 0;
+    top: 0;
+    width: auto;
+}
+
+.services .swiper-pagination-bullet {
+    height: 5px;
+    width: 15px;
+    border-radius: 10px;
+}
+
+.services .swiper-pagination-bullet-active {
+    width: 33px;
+    background-color: var(--secondary);
+}
+/* service swiper pagination */

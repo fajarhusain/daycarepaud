@@ -1,0 +1,1 @@
+@include('guest.partials.pillars')

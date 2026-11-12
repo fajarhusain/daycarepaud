@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        if (Schema::hasTable('diskons')) {
+            return;
+        }
+
+        Schema::create('diskons', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('sekolah_id')->constrained('sekolahs')->cascadeOnDelete();
+            $table->string('nama_diskon');
+            $table->enum('tipe', ['persentase', 'nominal'])->default('persentase');
+            $table->decimal('nilai', 12, 2)->default(0);
+            $table->text('keterangan')->nullable();
+            $table->boolean('is_aktif')->default(true);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('diskons');
+    }
+};

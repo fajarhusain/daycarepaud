@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="420" height="120" fill="none">
+  <!-- Brand Mark / Icon -->
+  <g transform="translate(16, 12)">
+    <!-- Soft warm organic background pod -->
+    <rect x="0" y="0" width="96" height="96" rx="28" fill="#E8F1E4" />
+    <rect x="0.5" y="0.5" width="95" height="95" rx="27.5" stroke="#D5E2D1" stroke-width="1" />
+    
+    <!-- Gentle stylized organic plant sprout & nurturing arch motif (monoline stroke) -->
+    <!-- Playful sun / warmth orb -->
+    <circle cx="68" cy="28" r="9" fill="#C8DEC2" opacity="0.8" />
+    
+    <!-- Nurturing parent/child organic arches / sprout -->
+    <!-- Larger protective leaf/sprout curve -->
+    <path d="M 28 72 C 28 42, 46 24, 70 24 C 66 38, 54 48, 38 52" 
+          stroke="#496C5C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          
+    <!-- Small tender growing sprout / child figure representation -->
+    <path d="M 46 72 C 46 56, 56 46, 72 46 C 70 56, 62 64, 52 66" 
+          stroke="#668F74" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          
+    <!-- Ground / soil gentle organic grounding line -->
+    <path d="M 22 72 C 34 70, 62 70, 74 72" 
+          stroke="#587E6C" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Little subtle seed / child head circle -->
+    <circle cx="56" cy="40" r="4.5" fill="#496C5C" />
+  </g>
+
+  <!-- Typography / Wordmark -->
+  <!-- Main brand name: "be kids" with editorial serif aesthetic -->
+  <text x="134" y="62" 
+        font-family="'Cormorant Garamond', 'Fraunces', 'EB Garamond', Georgia, serif" 
+        font-size="44" 
+        font-weight="600" 
+        letter-spacing="-0.02em" 
+        fill="#2D3F35">be kids</text>
+
+  <!-- Accent dot in sage green -->
+  <circle cx="282" cy="57" r="4" fill="#668F74" />
+
+  <!-- Subtitle descriptor: "DAYCARE & KINDERGARTEN" -->
+  <text x="136" y="86" 
+        font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" 
+        font-size="11" 
+        font-weight="600" 
+        letter-spacing="0.22em" 
+        fill="#587E6C">DAYCARE &amp; KINDERGARTEN</text>
+</svg>
